@@ -1,10 +1,6 @@
-#include "InputEvent.h"
+#include "KeyBoadEvent.h"
 
-void InputEvent::Initialize() {
-	flag_ = 0;
-}
-
-void InputEvent::Accepts() {
+void KeyBoadEvent::Accepts() {
 	// Œ…ã‚ª‚è–h~
 	flag_ = 0;
 

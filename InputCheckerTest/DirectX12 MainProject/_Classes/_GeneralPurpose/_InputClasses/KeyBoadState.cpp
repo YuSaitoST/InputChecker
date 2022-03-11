@@ -1,10 +1,6 @@
-#include "InputState.h"
+#include "KeyBoadState.h"
 
-void InputState::Initialize() {
-	flag_ = 0;
-}
-
-void InputState::Accepts() {
+void KeyBoadState::Accepts() {
 	// Œ…ã‚ª‚è–h~
 	flag_ = 0;
 
