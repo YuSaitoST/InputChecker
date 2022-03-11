@@ -7,7 +7,7 @@ using namespace DirectX::SimpleMath;
 
 enum PAD {
 	A, B, X, Y,
-	UP, DOWN, LEFT, RIGHT,
+	P_UP, P_DOWN, P_LEFT, P_RIGHT,
 	STICK_L_UP	, STICK_L_DOWN,
 	STICK_L_LEFT, STICK_L_RIGHT,
 	STICK_R_UP	, STICK_R_DOWN,
@@ -28,10 +28,10 @@ public:
 	inline bool AnyKey() { return (flag_ & 0xffffffff); }
 
 	inline Vector2 Direction() {
-		if (flag_ & (1 << UP   )) direct_.y = -1;
-		if (flag_ & (1 << DOWN )) direct_.y = 1;
-		if (flag_ & (1 << LEFT )) direct_.x = -1;
-		if (flag_ & (1 << RIGHT)) direct_.x = 1;
+		if (flag_ & (1 << P_UP   )) direct_.y = -1;
+		if (flag_ & (1 << P_DOWN )) direct_.y = 1;
+		if (flag_ & (1 << P_LEFT )) direct_.x = -1;
+		if (flag_ & (1 << P_RIGHT)) direct_.x = 1;
 		return direct_;
 	}
 	

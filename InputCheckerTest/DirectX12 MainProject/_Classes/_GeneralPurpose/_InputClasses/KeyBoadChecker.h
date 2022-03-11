@@ -1,17 +1,10 @@
-/**
- * @file KeyBoadChecker.h
- * @brief DirectXにおけるキーボードの入力状態を管理するクラス
- * @author 齋藤優宇
- * @date 2022/02/19
- */
-
 #pragma once
 
 #include "KeyBoadEvent.h"
 #include "KeyBoadState.h"
 
 enum ARROW_KEY {
-	UP, DOWN, LEFT, RIGHT
+	K_UP, K_DOWN, K_LEFT, K_RIGHT
 };
 
 class KeyBoadChecker {

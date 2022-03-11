@@ -7,9 +7,9 @@ void UseKeyCheck::Accepts() {
 }
 
 bool UseKeyCheck::MoveStateLeft() {
-	return key_.StateArrowKey(LEFT);
+	return key_.StateArrowKey(ARROW_KEY::K_LEFT);
 }
 
 bool UseKeyCheck::MoveStateRight() {
-	return key_.StateArrowKey(RIGHT);
+	return key_.StateArrowKey(ARROW_KEY::K_RIGHT);
 }

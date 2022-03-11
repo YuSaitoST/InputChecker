@@ -1,6 +1,7 @@
 #pragma once
 
 #include "KeyBoadChecker.h"
+#include "GamePadChecker.h"
 
 #define Press UseKeyCheck::GetInstance()
 
@@ -19,4 +20,5 @@ private:
 
 	static UseKeyCheck inctance_;
 	KeyBoadChecker key_;
+	GamePadChecker pad_;
 };

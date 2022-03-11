@@ -12,10 +12,10 @@ void GamePadEvent::Accepts(int index) {
 	flag_ += DXTK->GamePadEvent[index].b				? (1 << B			 ) : 0;
 	flag_ += DXTK->GamePadEvent[index].x				? (1 << X			 ) : 0;
 	flag_ += DXTK->GamePadEvent[index].y				? (1 << Y			 ) : 0;
-	flag_ += DXTK->GamePadEvent[index].dpadUp			? (1 << UP			 ) : 0;
-	flag_ += DXTK->GamePadEvent[index].dpadDown			? (1 << DOWN		 ) : 0;
-	flag_ += DXTK->GamePadEvent[index].dpadLeft			? (1 << LEFT		 ) : 0;
-	flag_ += DXTK->GamePadEvent[index].dpadRight		? (1 << RIGHT		 ) : 0;
+	flag_ += DXTK->GamePadEvent[index].dpadUp			? (1 << P_UP		 ) : 0;
+	flag_ += DXTK->GamePadEvent[index].dpadDown			? (1 << P_DOWN		 ) : 0;
+	flag_ += DXTK->GamePadEvent[index].dpadLeft			? (1 << P_LEFT		 ) : 0;
+	flag_ += DXTK->GamePadEvent[index].dpadRight		? (1 << P_RIGHT		 ) : 0;
 	flag_ += DXTK->GamePadEvent[index].leftStickUp		? (1 << STICK_L_UP	 ) : 0;
 	flag_ += DXTK->GamePadEvent[index].leftStickDown	? (1 << STICK_L_DOWN ) : 0;
 	flag_ += DXTK->GamePadEvent[index].leftStickLeft	? (1 << STICK_L_LEFT ) : 0;
