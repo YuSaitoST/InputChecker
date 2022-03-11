@@ -13,3 +13,6 @@ UniverSports_Remake/packages/
 *.lib
 *.dll
 *.obj
+*.png
+*.exe
+*.sln
