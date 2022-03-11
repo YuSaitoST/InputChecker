@@ -1,4 +1,4 @@
-#include "_Classes/_GeneralPurpose/_InputClasses/_Input/_InputState/InputState.h"
+#include "InputState.h"
 
 void InputState::Initialize() {
 	flag_ = 0;

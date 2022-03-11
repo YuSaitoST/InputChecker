@@ -1,4 +1,4 @@
-#include "_Classes/_GeneralPurpose/_InputClasses/_Input/_InputEvent/InputEvent.h"
+#include "InputEvent.h"
 
 void InputEvent::Initialize() {
 	flag_ = 0;
