@@ -2,7 +2,7 @@
 
 #include "GamePadBase.h"
 
-class GamePadState final : GamePadBase {
+class GamePadState final : public GamePadBase {
 public:
 	GamePadState() : n_Lx_(0), n_Ly_(0), n_Rx_(0), n_Ry_(0), n_Ltrg_(0), n_Rtrg_(0) {};
 	virtual ~GamePadState() {}

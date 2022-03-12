@@ -12,17 +12,17 @@ public:
 	KeyBoadChecker() {}
 	virtual ~KeyBoadChecker() {}
 
-	void Accepts();
+	void Accepts(){ inpEvent_.Accepts(); inpState_.Accepts(); }
 
-	bool EventCharaKey(char inputKey);
-	bool EventArrowKey(ARROW_KEY inputKey);
-	bool EventAnyKey();
-	Vector2 EventDirection();
+	bool EventCharaKey(char inputKey){ return inpEvent_.CharaKey(inputKey); }
+	bool EventArrowKey(ARROW_KEY inputKey){ return inpEvent_.ArrowKey(inputKey); }
+	bool EventAnyKey(){ return inpEvent_.AnyKey(); }
+	Vector2 EventDirection(){ return inpEvent_.Direction(); }
 	
-	bool StateCharaKey(char inputKey);
-	bool StateArrowKey(ARROW_KEY inputKey);
-	bool StateAnyKey();
-	Vector2 StateDirection();
+	bool StateCharaKey(char inputKey){ return inpState_.CharaKey(inputKey); }
+	bool StateArrowKey(ARROW_KEY inputKey){ return inpState_.ArrowKey(inputKey); }
+	bool StateAnyKey(){ return inpState_.AnyKey(); }
+	Vector2 StateDirection(){ return inpState_.Direction(); }
 
 private:
 	KeyBoadEvent inpEvent_;

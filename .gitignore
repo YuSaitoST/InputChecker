@@ -1,12 +1,12 @@
 InputCheckerTest/.vs/
 InputCheckerTest/DirectX12 MainProject/cppcoro/
 InputCheckerTest/DirectX12 MainProject/Resource/
+InputCheckerTest/DirectX12 MainProject/x64/
 InputCheckerTest/DirectX12AffinityLayer/
 InputCheckerTest/DirectXTK9/
 InputCheckerTest/DirectXTK12/
-InputCheckerTest/Effekseer/
-InputCheckerTest/External/
 InputCheckerTest/packages/
+InputCheckerTest/x64/
 *.user
 *.config
 *.inc

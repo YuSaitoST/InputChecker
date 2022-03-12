@@ -2,7 +2,7 @@
 
 #include "GamePadBase.h"
 
-class GamePadEvent final : GamePadBase {
+class GamePadEvent final : public GamePadBase {
 public:
 	GamePadEvent() {}
 	virtual ~GamePadEvent() {}
