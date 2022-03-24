@@ -7,7 +7,10 @@
 
 class UseKeyCheck {
 public:
-	static UseKeyCheck& GetInstance() { return inctance_; }
+	static UseKeyCheck& GetInstance() {
+		static UseKeyCheck inctance;
+		return inctance;
+	}
 
 	void Accepts();
 
@@ -18,7 +21,6 @@ private:
 	UseKeyCheck() {}
 	virtual ~UseKeyCheck() {}
 
-	static UseKeyCheck inctance_;
 	KeyBoadChecker key_;
 	GamePadChecker pad_;
 };
