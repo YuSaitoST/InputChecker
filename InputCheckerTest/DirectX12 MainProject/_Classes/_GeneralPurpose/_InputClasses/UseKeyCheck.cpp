@@ -5,6 +5,14 @@ void UseKeyCheck::Accepts() {
 	pad_.Accepts(0);
 }
 
+bool UseKeyCheck::Pad_B() {
+	return pad_.EventOnOffKey(0, PAD::P_B);
+}
+
+bool UseKeyCheck::Pad_A() {
+	return pad_.EventOnOffKey(0, PAD::P_A);
+}
+
 bool UseKeyCheck::MoveStateLeft() {
 	return key_.StateOnOffKey(KEY::LEFT) || pad_.StateOnOffKey(0, PAD::P_LEFT);
 }

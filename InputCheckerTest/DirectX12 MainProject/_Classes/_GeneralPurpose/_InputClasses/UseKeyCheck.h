@@ -14,6 +14,9 @@ public:
 
 	void Accepts();
 
+	bool Pad_B();
+	bool Pad_A();
+
 	bool MoveStateLeft();
 	bool MoveStateRight();
 
