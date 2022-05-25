@@ -1,11 +1,14 @@
 #include "KeyBoadState.h"
 
+/**
+* @brief “ü—Íó‘Ô‚ð’²‚×‚é
+*/
 void KeyBoadState::Accepts() {
-	// Œ…ã‚ª‚è–hŽ~
+	//Œ…ã‚ª‚è–hŽ~
 	flag_	= 0;
 	direct_ = Vector2::Zero;
 
-	// Šebit‚É“ü—Íó‘Ô‚ð“ü‚ê‚é
+	//Šeƒrƒbƒg‚É“ü—Íó‘Ô‚ð“ü‚ê‚é
 	flag_ |= (bool)DXTK->KeyState->A     << A    ;
 	flag_ |= (bool)DXTK->KeyState->B     << B    ;
 	flag_ |= (bool)DXTK->KeyState->C     << C    ;
@@ -36,4 +39,5 @@ void KeyBoadState::Accepts() {
 	flag_ |= (bool)DXTK->KeyState->Down  << DOWN ;
 	flag_ |= (bool)DXTK->KeyState->Left  << LEFT ;
 	flag_ |= (bool)DXTK->KeyState->Right << RIGHT;
+	flag_ |= (bool)DXTK->KeyState->Tab   << TAB	;
 }

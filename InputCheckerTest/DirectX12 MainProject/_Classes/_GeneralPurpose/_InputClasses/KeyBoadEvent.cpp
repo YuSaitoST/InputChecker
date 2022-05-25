@@ -1,11 +1,14 @@
 #include "KeyBoadEvent.h"
 
+/**
+* @brief “ü—Íó‘Ô‚ğ’²‚×‚é
+*/
 void KeyBoadEvent::Accepts() {
-	// Œ…ã‚ª‚è–h~
+	//Œ…ã‚ª‚è–h~
 	flag_	= 0;
 	direct_ = Vector2::Zero;
 
-	// Šebit‚É“ü—Íó‘Ô‚ğ“ü‚ê‚é
+	//Šeƒrƒbƒg‚É“ü—Íó‘Ô‚ğ“ü‚ê‚é
 	flag_ |= (bool)DXTK->KeyEvent->pressed.A		<< A    ;
 	flag_ |= (bool)DXTK->KeyEvent->pressed.B		<< B    ;
 	flag_ |= (bool)DXTK->KeyEvent->pressed.C		<< C    ;
@@ -18,7 +21,7 @@ void KeyBoadEvent::Accepts() {
 	flag_ |= (bool)DXTK->KeyEvent->pressed.J		<< J    ;
 	flag_ |= (bool)DXTK->KeyEvent->pressed.K		<< K    ;
 	flag_ |= (bool)DXTK->KeyEvent->pressed.L		<< L    ;
-	flag_ |= (bool)(bool)DXTK->KeyEvent->pressed.M		<< M    ;
+	flag_ |= (bool)DXTK->KeyEvent->pressed.M		<< M    ;
 	flag_ |= (bool)DXTK->KeyEvent->pressed.N		<< N    ;
 	flag_ |= (bool)DXTK->KeyEvent->pressed.O		<< O    ;
 	flag_ |= (bool)DXTK->KeyEvent->pressed.P		<< P    ;
@@ -33,7 +36,8 @@ void KeyBoadEvent::Accepts() {
 	flag_ |= (bool)DXTK->KeyEvent->pressed.Y		<< Y    ;
 	flag_ |= (bool)DXTK->KeyEvent->pressed.Z		<< Z    ;
 	flag_ |= (bool)DXTK->KeyEvent->pressed.Up		<< UP   ;
-	flag_ |= (bool)DXTK->KeyEvent->pressed.Down	<< DOWN ;
-	flag_ |= (bool)DXTK->KeyEvent->pressed.Left	<< LEFT ;
+	flag_ |= (bool)DXTK->KeyEvent->pressed.Down		<< DOWN ;
+	flag_ |= (bool)DXTK->KeyEvent->pressed.Left		<< LEFT ;
 	flag_ |= (bool)DXTK->KeyEvent->pressed.Right	<< RIGHT;
+	flag_ |= (bool)DXTK->KeyEvent->pressed.Tab		<< TAB	;
 }
