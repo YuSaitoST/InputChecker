@@ -18,7 +18,7 @@
  */
 enum class GM_VPAD {
 	//! 右側の4種類のボタン
-	P_A, P_B, P_X, P_Y,
+	P_X, P_Y, P_A, P_B,
 
 	//! 十字キー
 	P_UP, P_DOWN, P_LEFT, P_RIGHT,

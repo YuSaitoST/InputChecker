@@ -15,7 +15,7 @@
 #include <memory>
 #include <string>
 #include <winsock2.h>
-//#include <ws2tcpip.h>
+#include <WS2tcpip.h>
 
 
 #define _WINSOCK_DEPRECATED_NO_WARNINGS
@@ -24,9 +24,10 @@
 #define VPERR_CREATE_SOCKET -1
 #define VPERR_BIND			-2
 #define VPERR_SELECT_FUNC	-3
-#define VPERR_TIMEOUT		-4
-#define VPERR_LISTEN		-5
-#define VPERR_CONNECT		-6
+#define VPERR_SOCK_OPTION	-4
+#define VPERR_TIMEOUT		-5
+#define VPERR_LISTEN		-6
+#define VPERR_CONNECT		-7
 
 #define VP_PORTNUMBER		 51234
 
@@ -39,7 +40,7 @@ public:
 	virtual int Initialize() = 0;
 	virtual void Send(std::string sendData) = 0;
 	virtual std::string Recv() = 0;
-	
+
 	/**
 	* @brief 通信を終了する
 	*/
@@ -71,9 +72,9 @@ protected:
 	*/
 	inline void AddrSetting(sockaddr_in& addr, ADDRESS_FAMILY family, ULONG sinAddr) {
 		memset(&addr, 0, sizeof(addr));
-		addr.sin_family				= family;
-		addr.sin_port				= htons(VP_PORTNUMBER);	// 受信ポート(関数通さぬと正しいホストが開けないみたい)
-		addr.sin_addr.S_un.S_addr	= sinAddr;				// INADDR_ANY : どのIPからでも通信を受け取る状態にする、受信側はこれで大丈夫
+		addr.sin_family = family;
+		addr.sin_port = htons(VP_PORTNUMBER);	// 受信ポート(関数通さぬと正しいホストが開けないみたい)
+		addr.sin_addr.S_un.S_addr = sinAddr;				// INADDR_ANY : どのIPからでも通信を受け取る状態にする、受信側はこれで大丈夫
 		// or 送信アドレスを固定にする場合
 		//addr.sin_addr.S_un.S_addr = inet_addr(/*送信アドレス*/"127.0.0.1");
 	}

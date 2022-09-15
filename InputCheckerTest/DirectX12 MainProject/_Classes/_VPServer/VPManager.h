@@ -51,8 +51,10 @@ public:
 	/*
 	* @brief UDP通信の初期化
 	*/
-	inline void UDP_Initialize() { udp_server_->Initialize(); }
-	
+	inline void UDP_Initialize() { 
+		int err = udp_server_->Initialize(); 
+	}
+
 	/*
 	* @brief UDP通信によるデータ受取
 	* @return 受信データ

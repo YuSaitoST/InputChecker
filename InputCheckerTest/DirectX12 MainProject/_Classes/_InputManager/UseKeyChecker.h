@@ -33,6 +33,9 @@ public:
 		return *inctance_; 
 	}
 
+	/*
+	* @brief 入力方法の変更
+	*/
 	inline void SetInputSystem(InputSystem system, int playerID) {
 		if (system == InputSystem::GAMEPAD) {
 			inputSystemList_[playerID]	= InputSystem::GAMEPAD;
@@ -51,10 +54,23 @@ public:
 		}
 	}
 
+	/*
+	* @brief 各プレイヤーの入力方法の取得
+	*/
 	inline std::vector<InputSystem> GetNowInputSystem() const { 
 		return inputSystemList_; 
 	}
 
+	/*
+	* @brief UDP通信の開始
+	*/
+	inline void UDPStart() {
+		vpManager_->UDP_Initialize();
+	}
+
+	/*
+	* @brief 各プレイヤーの入力状態を調べる
+	*/
 	inline void Accepts() {
 		for (int i = 0; i < 4; ++i) {
 			inputList_[i]->Accepts(i);
@@ -125,7 +141,6 @@ private:
 		inputSystemList_.push_back(InputSystem::GAMEPAD);
 
 		vpManager_ = std::make_unique<VPManager>();
-		vpManager_->UDP_Initialize();
 	}
 	virtual ~UseKeyChecker() {}
 

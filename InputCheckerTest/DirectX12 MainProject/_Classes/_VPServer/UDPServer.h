@@ -10,6 +10,7 @@
  //------------------------------------------------------------------------------
  //	インクルードファイル
  //------------------------------------------------------------------------------
+
 #include "VPServer.h"
 
 
@@ -24,8 +25,18 @@ public:
 	*/
 	virtual int Initialize() override {
 		sockaddr_in addr;
-
+		u_long		val		= 1;
+		ip_mreq		mreq;
+		
 		WSAStartUp();
+
+		char hostname[256];
+		gethostname(hostname, sizeof(hostname));
+		IN_ADDR inaddr;
+		memcpy(&inaddr, gethostbyname(hostname)->h_addr_list[0], 4);
+		char ip[256];
+		strcpy(ip, inet_ntoa(inaddr));
+
 		AddrSetting(addr, AF_INET, INADDR_ANY);
 
 		socket_ = CreateSocket(addr.sin_family, SOCK_DGRAM, 0);
@@ -39,9 +50,15 @@ public:
 			return VPERR_BIND;
 		}
 
-		// ノンブロッキングに設定
-		u_long val = 1;
 		ioctlsocket(socket_, FIONBIO, &val);
+
+		memset(&mreq, 0, sizeof(mreq));
+		mreq.imr_interface.S_un.S_addr = INADDR_ANY;
+		mreq.imr_multiaddr.S_un.S_addr = inet_addr(ip);
+		if (setsockopt(socket_, IPPROTO_IP, IP_MULTICAST_IF, (char*)&mreq, sizeof(mreq)) != 0) {
+			WSACleanUp();
+			return VPERR_SOCK_OPTION;
+		}
 
 		return VPERR_SAFE;
 	}
